@@ -1,6 +1,6 @@
 >**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
 
-### Date created
+### Creation Date
 This project was created on 11/28/2022.
 The README file was created on 11/29/2022.
 
@@ -20,10 +20,10 @@ This project is a Python package used to load and explore bike share data from 3
 
 
 ### Files used
-bikeshare.py - python program Files
-chicago.csv - Bikeshare data from Chicago
-new_york_city.csv - Bikeshare data from New York City
-washington.csv - Bikeshare data from Washington
+- *bikeshare.py* - python program Files
+- *chicago.csv* - Bikeshare data from Chicago
+- *new_york_city.csv* - Bikeshare data from New York City
+- *washington.csv* - Bikeshare data from Washington
 
 ### Credits
 Udacity.com for their effective teaching methods, videos, and tools!
