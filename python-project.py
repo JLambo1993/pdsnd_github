@@ -30,11 +30,14 @@ def get_filters():
 
     city = ' '
     while True:
-        city = input('Which city would you like to analyze data from? Please select from \nthe following cities: (Chicago, New York City, or Washington).\n >>>').lower()
+        city = input('Which city would you like to analyze data from? \
+        Please select from \nthe following cities: (Chicago, New York City, or \
+        Washington).\n >>>').lower()
         if city in CITY_DATA:
             break
         """If an improper response is entered, the line will print a failure message"""
-        print('\nSorry, the city you entered does not match any of the available options.\nPlease enter one of the cities within the list of options.\n')
+        print('\nSorry, the city you entered does not match any of the available \
+        options.\nPlease enter one of the cities within the list of options.\n')
 
 
     # TO DO: get user input for month (all, january, february, ... , june)
@@ -115,23 +118,23 @@ def time_stats(df):
 
 
     # TO DO: display the most common month
-    month_cmn = df['month'].mode()[0]
-    print('the most common month for bikeshare use: {}\n'.format(months[month_cmn].title()))
+    month_common = df['month'].mode()[0]
+    print('the most common month for bikeshare use: {}\n'.format(months[month_common].title()))
     # TO DO: display the most common day of week
-    day_cmn = df['day'].mode()[0]
-    print('the most common weekday for bikeshare use: {}\n'.format(day_cmn.title()))
+    day_common = df['day'].mode()[0]
+    print('the most common weekday for bikeshare use: {}\n'.format(day_common.title()))
     # TO DO: display the most common start hour
-    hour_cmn = df['hour'].mode()[0]
+    hour_common = df['hour'].mode()[0]
 
 
-    if hour_cmn == 0:
-        hour_cmn = '12 AM'
-        print('the most common hour for bikeshare use: {}\n'.format(hour_cmn))
-    elif hour_cmn > 0 and hour_cmn <= 12:
-        print('the most common hour for bikeshare use: {} AM\n'.format(hour_cmn))
+    if hour_common == 0:
+        hour_common = '12 AM'
+        print('the most common hour for bikeshare use: {}\n'.format(hour_common))
+    elif hour_common > 0 and hour_common <= 12:
+        print('the most common hour for bikeshare use: {} AM\n'.format(hour_common))
     else:
-        hour_cmn = hour_cmn - 12
-        print('the most common hour for bikeshare use: {} PM\n'.format(hour_cmn))
+        hour_common = hour_common - 12
+        print('the most common hour for bikeshare use: {} PM\n'.format(hour_common))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -144,12 +147,12 @@ def station_stats(df):
     start_time = time.time()
 
     # TO DO: display most commonly used start station
-    start_station_cmn = df['Start Station'].mode()[0]
-    print('The most commonly used start station: {}\n'.format(start_station_cmn))
+    start_station_common = df['Start Station'].mode()[0]
+    print('The most commonly used start station: {}\n'.format(start_station_common))
 
     # TO DO: display most commonly used end station
-    end_station_cmn = df['End Station'].mode()[0]
-    print('The most commonly used end station: {}.\n'.format(end_station_cmn))
+    end_station_common = df['End Station'].mode()[0]
+    print('The most commonly used end station: {}.\n'.format(end_station_common))
 
     # TO DO: display most frequent combination of start station and end station trip
 
