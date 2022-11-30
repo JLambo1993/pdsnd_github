@@ -5,9 +5,9 @@ import numpy as np
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
-months = ['all', 'january', 'february', 'march',
+MONTH_DATA = ['all', 'january', 'february', 'march',
           'april', 'may', 'june']
-weekdays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday',
+DAY_DATA = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday',
             'friday', 'saturday', 'all']
 
 
@@ -44,8 +44,9 @@ def get_filters():
     month = ' '
 
     while True:
-        month = input('\nWhich month would you like to look at? \n Use full name format such as January.\n NOTE:If you want to look at all months type \"all\".\n >>>').lower()
-        if month in months:
+        month = input('\nWhich month would you like to look at? \n Use full name format such as January.\n NOTE:If you want to look at all
+         type \"all\".\n >>>').lower()
+        if month in MONTH_DATA:
             break
         print('You have entered an invalid month. Please enter a valid month such as January, February, etc.\n')
 
@@ -56,7 +57,7 @@ def get_filters():
 
     while True:
         day = input('\nWhich day would you like to look at? \n Use full name format such as Monday.\n NOTE:If you want to look at all days type \"all\".\n >>>').lower()
-        if day in weekdays:
+        if day in DAY_DATA:
             break
         print('You have entered an invalid day. Please enter a valid day such as Monday, Tuesday, etc.\n')
 
@@ -90,8 +91,8 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
-        months = ['january', 'february', 'march', 'april', 'may', 'june']
-        month = months.index(month) + 1
+        MONTH_DATA = ['january', 'february', 'march', 'april', 'may', 'june']
+        month = MONTH_DATA.index(month) + 1
 
         # filter by month to create the new dataframe
         df = df.loc[df['month'] == month]
@@ -119,7 +120,7 @@ def time_stats(df):
 
     # TO DO: display the most common month
     month_common = df['month'].mode()[0]
-    print('the most common month for bikeshare use: {}\n'.format(months[month_common].title()))
+    print('the most common month for bikeshare use: {}\n'.format(MONTH_DATA[month_common].title()))
     # TO DO: display the most common day of week
     day_common = df['day'].mode()[0]
     print('the most common weekday for bikeshare use: {}\n'.format(day_common.title()))
